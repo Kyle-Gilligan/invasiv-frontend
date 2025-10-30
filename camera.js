@@ -220,7 +220,7 @@ async function takePhoto() {
 
 async function sendImageToAPI(imageBase64, latitude, longitude, date) {
   try {
-    const resp = await fetch('http://invasiv-backend-productiom.up.railway.app/api/v1/check', {
+    const resp = await fetch('https://rotten-goats-visit.loca.lt/api/v1/check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ imageBase64, latitude, longitude, date })

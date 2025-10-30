@@ -1,4 +1,3 @@
-
 let sheet, sheetBackdrop, sheetHeader, sheetGrabber, sheetCloseBtn, sheetTitleEl, sheetStatusEl, sheetBody;
 let sheetState = 'closed';
 let sheetLocked = false;
@@ -223,3 +222,16 @@ document.addEventListener('DOMContentLoaded', () => {
   buildBottomSheet();
   initMap();
 });
+
+// JavaScript logic to expand the minimized drawer on tap
+const bottomSheet = document.querySelector('.bottom-sheet');
+
+if (bottomSheet) {
+  const grabber = document.querySelector('.sheet-grabber'); // Renamed variable to avoid conflict
+
+  if (grabber) {
+    grabber.addEventListener('click', () => {
+      bottomSheet.classList.toggle('open-full'); // Toggles the full expansion class
+    });
+  }
+}

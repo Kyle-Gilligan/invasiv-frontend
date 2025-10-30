@@ -529,7 +529,7 @@ body.camera-page {
   border-top-right-radius: 24px;
   box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
   transform: translateY(100%);
-  transition: transform 240ms ease;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for expanding */
   z-index: 1008;
   display: flex;
   flex-direction: column;
@@ -612,12 +612,12 @@ body.camera-page {
 .status-pill.unknown  { background: #9e9e9e; }
 
 .sheet-body {
-  padding: 32px 16px; /* Add more padding to make the scrollable area larger */
+  padding: 24px 16px 32px 16px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   font-size: 18px; /* Reduced slightly from 20px */
   line-height: 1.5;
-  max-height: calc(100% - 30px); /* Increase the scrollable height */
+  max-height: calc(100% - 50px);
 }
 
 .section {

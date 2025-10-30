@@ -203,7 +203,7 @@ async function initMap() {
   }).addTo(map);
 
   try {
-  const results = await fetch(" https://nonlaying-unjilted-johnathan.ngrok-free.dev/api/v1/results", {
+  const results = await fetch("https://nonlaying-unjilted-johnathan.ngrok-free.dev/api/v1/results", {
     headers: { 
       'Bypass-Tunnel-Reminder': 'true'
     }

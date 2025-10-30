@@ -204,7 +204,7 @@ async function initMap() {
   }).addTo(map);
 
   try {
-    const results = await fetch("https://rotten-goats-visit.loca.lt/api/v1/results").then(j => j.json());
+    const results = await fetch("https://shaky-beers-yawn.loca.lt/api/v1/results").then(j => j.json());
     results.forEach(item => {
       const marker = L.marker([item.latitude, item.longitude]).addTo(map);
       marker.on('click', () => renderSheet(item));

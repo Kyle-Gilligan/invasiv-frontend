@@ -204,7 +204,7 @@ async function initMap() {
   }).addTo(map);
 
   try {
-    const results = await fetch("http://invasiv-backend-production.up.railway.app/api/v1/results").then(j => j.json());
+    const results = await fetch("http://invasiv-backend-productiom.up.railway.app/api/v1/results").then(j => j.json());
     results.forEach(item => {
       const marker = L.marker([item.latitude, item.longitude]).addTo(map);
       marker.on('click', () => renderSheet(item));

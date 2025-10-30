@@ -222,7 +222,7 @@ async function sendImageToAPI(imageBase64, latitude, longitude, date) {
   try {
     const resp = await fetch('https://huge-hairs-enter.loca.lt/api/v1/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Bypass-Tunnel-Reminder': 'true' },
       body: JSON.stringify({ imageBase64, latitude, longitude, date })
     });
 

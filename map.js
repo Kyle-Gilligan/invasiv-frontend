@@ -204,14 +204,19 @@ async function initMap() {
   }).addTo(map);
 
   try {
-    const results = await fetch("https://huge-hairs-enter.loca.lt/api/v1/results").then(j => j.json());
-    results.forEach(item => {
-      const marker = L.marker([item.latitude, item.longitude]).addTo(map);
-      marker.on('click', () => renderSheet(item));
-    });
-  } catch (err) {
-    console.error('Failed to load map data:', err);
-  }
+  const results = await fetch("https://huge-hairs-enter.loca.lt/api/v1/results", {
+    headers: { 
+      'Bypass-Tunnel-Reminder': 'true'
+    }
+  }).then(j => j.json());
+  
+  results.forEach(item => {
+    const marker = L.marker([item.latitude, item.longitude]).addTo(map);
+    marker.on('click', () => renderSheet(item));
+  });
+} catch (err) {
+  console.error('Failed to load map data:', err);
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {

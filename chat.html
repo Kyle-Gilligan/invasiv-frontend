@@ -147,7 +147,9 @@
         try {
           const resp = await fetch('https://huge-hairs-enter.loca.lt/api/v1/chat', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json',
+                      'Bypass-Tunnel-Reminder': 'true'
+             },
             body: JSON.stringify({ message: text })
           });
 

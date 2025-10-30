@@ -204,14 +204,19 @@ async function initMap() {
   }).addTo(map);
 
   try {
-    const results = await fetch("https://nonlaying-unjilted-johnathan.ngrok-free.dev/api/v1/results").then(j => j.json());
-    results.forEach(item => {
-      const marker = L.marker([item.latitude, item.longitude]).addTo(map);
-      marker.on('click', () => renderSheet(item));
-    });
-  } catch (err) {
-    console.error('Failed to load map data:', err);
-  }
+  const results = await fetch("https://nonlaying-unjilted-johnathan.ngrok-free.app/api/v1/results", {
+    headers: { 
+      'ngrok-skip-browser-warning': 'true'
+    }
+  }).then(j => j.json());
+  
+  results.forEach(item => {
+    const marker = L.marker([item.latitude, item.longitude]).addTo(map);
+    marker.on('click', () => renderSheet(item));
+  });
+} catch (err) {
+  console.error('Failed to load map data:', err);
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -220,7 +220,7 @@ async function takePhoto() {
 
 async function sendImageToAPI(imageBase64, latitude, longitude, date) {
   try {
-    const resp = await fetch('https://nonlaying-unjilted-johnathan.ngrok-free.dev/api/v1/check', {
+    const resp = await fetch('https://invasiv-backend-v2.onrender.com/api/v1/check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
       body: JSON.stringify({ imageBase64, latitude, longitude, date })
